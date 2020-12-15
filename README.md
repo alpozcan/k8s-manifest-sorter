@@ -1,12 +1,12 @@
 # k8s-manifest-sorter
-Sorts Kubernetes manifest files in-place by resource Kind.
+Sorts Kubernetes manifest files in-place by resource kind.
 
-It can also be used to filter resources based on their kind, with the `-f` switch.
+It can also be used to filter resources with the `-f` switch.
 
 ## Usage:
 
 ```
-kms.py [-h] [-b] [-f] [-l] order input_files [input_files ...]
+kms.py [-h] [-b] [-f] [-l] order input_file [input_file ...]
 
 positional arguments:
   order         The order of resource Kinds as a comma-separated list. The
@@ -31,10 +31,12 @@ Reorder the manifest so that CustomResourceDefinitions are at the top of the man
 ./kms.py CustomResourceDefinition manifest.yaml
 ```
 
+
 Reorder the manifest so that Projects get created before the Applications to avoid error in Argo CD. Also, take a backup of the original manifest:
 ```
 ./kms.py -b AppProject,Application manifest.yaml
 ```
+
 
 Reorder the manifest so that Deployments are at the bottom of the manifest, therefore ensuring they get applied last:
 ```
