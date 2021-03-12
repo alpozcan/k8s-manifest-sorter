@@ -8,7 +8,7 @@ parser.add_argument('-b', '--backup', default=False, help='Create a backup copy 
 parser.add_argument('-f', '--filter', default=False, help='Filter out all resource kinds other than those specified in the order. Default: disabled', action='store_true')
 parser.add_argument('-l', '--last', default=False, help='Instead of placing the specified resources at the top, place them at the bottom. Default: disabled', action='store_true')
 parser.add_argument("order", nargs=1, help='The order of resource Kinds as a comma-separated list. The resources will be moved to the top of the manifest in the order given.')
-parser.add_argument("input_file", nargs="+", default=[], help='One or more input files to process.')
+parser.add_argument("input_files", nargs="+", default=[], help='One or more input files to process.')
 
 args = parser.parse_args()
 
